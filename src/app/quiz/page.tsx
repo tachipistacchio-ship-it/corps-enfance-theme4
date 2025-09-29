@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import BackToPlanButton from '@/components/content/BackToPlanButton';
 import NextSectionButton from '@/components/content/NextSectionButton';
+import StartSectionButton from '@/components/content/StartSectionButton';
 import { CheckCircle, XCircle, RotateCcw } from 'lucide-react';
 
 interface Question {
@@ -164,6 +165,7 @@ export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<number[]>([]);
   const [showResults, setShowResults] = useState(false);
+  const [quizStarted, setQuizStarted] = useState(false);
   const [score, setScore] = useState(0);
 
   const handleAnswer = (answerIndex: number) => {
@@ -191,6 +193,7 @@ export default function QuizPage() {
     setCurrentQuestion(0);
     setSelectedAnswers([]);
     setShowResults(false);
+    setQuizStarted(false);
     setScore(0);
   };
 
@@ -207,6 +210,47 @@ export default function QuizPage() {
     if (percentage >= 60) return 'Bien ! Quelques révisions vous permettront d\'atteindre l\'excellence.';
     return 'Il est recommandé de revoir les sections du cours avant de continuer.';
   };
+
+  // Écran de démarrage du quiz
+  if (!quizStarted) {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 max-w-4xl">
+          <BackToPlanButton />
+          
+          <div className="bg-white rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg text-center">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 sm:mb-8">
+              Quiz : Nourrices et Crèches
+            </h1>
+            
+            <div className="mb-8">
+              <StartSectionButton 
+                title="Commencer le Quiz"
+                description="Testez vos connaissances sur l'histoire des nourrices et des crèches"
+              />
+            </div>
+            
+            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mb-6">
+              <h3 className="text-lg font-semibold text-blue-800 mb-2">Informations sur le quiz</h3>
+              <ul className="text-left space-y-1 text-base text-gray-700">
+                <li>• <strong>{questions.length} questions</strong> à choix multiples</li>
+                <li>• <strong>Temps illimité</strong> pour réfléchir</li>
+                <li>• <strong>Résultats détaillés</strong> avec explications</li>
+                <li>• <strong>Possibilité de recommencer</strong> le quiz</li>
+              </ul>
+            </div>
+            
+            <button
+              onClick={() => setQuizStarted(true)}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-lg"
+            >
+              Démarrer le Quiz
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (showResults) {
     return (

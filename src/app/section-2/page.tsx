@@ -1,5 +1,6 @@
 import BackToPlanButton from '@/components/content/BackToPlanButton';
 import NextSectionButton from '@/components/content/NextSectionButton';
+import StartSectionButton from '@/components/content/StartSectionButton';
 
 export default function Section2() {
   return (
@@ -11,6 +12,11 @@ export default function Section2() {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 sm:mb-8 lg:mb-12 text-center">
             Section 2 : Évolution des Qualités et Cadre Légal
           </h1>
+          
+          <StartSectionButton 
+            title="Commencer la Section 2"
+            description="Explorez l'évolution des critères de sélection des nourrices"
+          />
           
           <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 lg:p-10 space-y-6 sm:space-y-8">
             <section>
