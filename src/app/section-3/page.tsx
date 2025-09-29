@@ -1,4 +1,5 @@
 import BackToPlanButton from '@/components/content/BackToPlanButton';
+import NextSectionButton from '@/components/content/NextSectionButton';
 
 export default function Section3Page() {
   return (
@@ -290,6 +291,12 @@ export default function Section3Page() {
               </p>
             </div>
           </div>
+          
+          <NextSectionButton 
+            href="/quiz" 
+            title="Quiz" 
+            description="Évaluation de vos connaissances"
+          />
         </div>
       </div>
     </div>

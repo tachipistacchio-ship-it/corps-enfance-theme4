@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import BackToPlanButton from '@/components/content/BackToPlanButton';
+import NextSectionButton from '@/components/content/NextSectionButton';
 import { CheckCircle, XCircle, RotateCcw } from 'lucide-react';
 
 interface Question {
@@ -285,6 +286,14 @@ export default function QuizPage() {
               >
                 Retour au plan de cours
               </button>
+            </div>
+
+            <div className="mt-6">
+              <NextSectionButton 
+                href="/cas-pratiques"
+                title="Cas Pratiques"
+                description="Appliquez vos connaissances avec des exercices concrets"
+              />
             </div>
           </div>
         </div>

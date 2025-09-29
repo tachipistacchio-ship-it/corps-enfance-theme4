@@ -1,4 +1,5 @@
 import BackToPlanButton from '@/components/content/BackToPlanButton';
+import NextSectionButton from '@/components/content/NextSectionButton';
 
 export default function Section2() {
   return (
@@ -229,6 +230,12 @@ export default function Section2() {
               </p>
             </div>
           </div>
+          
+          <NextSectionButton 
+            href="/section-3" 
+            title="Section 3" 
+            description="Histoire et Évolution des Crèches"
+          />
         </div>
       </div>
     </div>

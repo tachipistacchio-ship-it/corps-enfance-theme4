@@ -1,4 +1,5 @@
 import BackToPlanButton from '@/components/content/BackToPlanButton';
+import NextSectionButton from '@/components/content/NextSectionButton';
 
 export default function Section1() {
   return (
@@ -223,6 +224,12 @@ export default function Section1() {
               </p>
             </div>
           </div>
+          
+          <NextSectionButton 
+            href="/section-2" 
+            title="Section 2" 
+            description="Évolution des Qualités et Cadre Légal"
+          />
         </div>
       </div>
     </div>
