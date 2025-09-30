@@ -1,7 +1,7 @@
 'use client';
 
 import { Users, TrendingUp, Brain, Target, Rocket, Baby, Award } from 'lucide-react';
-import SectionBlock from './SectionBlock';
+import SectionBlock from './SectionBlockFixed';
 
 const sections = [
   {
